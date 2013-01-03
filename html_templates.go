@@ -33,7 +33,7 @@ func genNamespace() map[string]interface{} {
 }
 
 // style here is lacking, but it's a straight C&P/translate from my older Python
-// style sheet switch added <sgrayban>
+// style sheet switch added <sgrayban@gmail.com>
 func prepareTemplates() {
 	kPAGE_TEMPLATE_BASIC_HEAD := fmt.Sprintf(`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
