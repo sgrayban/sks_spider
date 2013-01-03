@@ -27,6 +27,7 @@ import (
 
 const SERVE_PREFIX = "/sks-peers"
 
+// style sheet switch added <sgrayban>
 const (
 	kHTML_FAVICON        = "/favicon.ico"
 	kBUCKET_SIZE         = 3000
