@@ -27,6 +27,7 @@ func genNamespace() map[string]interface{} {
 	ns := make(map[string]interface{}, 50)
 	ns["Maintainer"] = *flMaintEmail
 	ns["MyHostname"] = *flHostname
+	ns["MyStyle"] = *flMyStyle
 	ns["Warning"] = ""
 	return ns
 }
@@ -39,10 +40,10 @@ func prepareTemplates() {
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="Content-Script-Type" content="application/ecmascript; charset=UTF-8">
   <meta http-equiv="Content-Style-Type" content="text/css; charset=UTF-8">
-  <meta http-equiv="imagetoolbar" content="no"> <!-- MSIE control -->
-  <link rel="stylesheet" href="%s" type="text/css" charset="utf-8">
+  <meta http-equiv="imagetoolbar" content="no">
+  <link rel="stylesheet" href="{{.MyStyle}}" type="text/css" charset="utf-8">
   <link rel="shortcut icon" href="%s" type="image/x-icon">
-`, kHTML_CSS_STYLESHEET, kHTML_FAVICON)
+`, kHTML_FAVICON)
 
 	kPAGE_TEMPLATE_BADUSER := kPAGE_TEMPLATE_BASIC_HEAD + `
   <link rev="made" href="mailto:{{.Maintainer}}">

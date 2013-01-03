@@ -1,0 +1,5 @@
+#!/bin/bash
+go build -v sks_stats_daemon.go
+strip sks_stats_daemon
+sudo chown sks:sks sks_stats_daemon
+sudo mv sks_stats_daemon /home/sks/bin/
