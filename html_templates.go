@@ -63,6 +63,7 @@ func prepareTemplates() {
  </head>
  <body>
   <h1>{{.MyHostname}} Peer Mesh</h1>
+  <hr align="left" width="50%">
 {{.Warning}}
 {{.Scanning_active}}
   <div class="explain">
@@ -77,6 +78,7 @@ func prepareTemplates() {
 	kPAGE_TEMPLATE_FOOT := `
    <caption>SKS has {{.Peer_count}} peers of {{.Mesh_count}} visible</caption>
   </table>
+  <div class="lastupdate">Last scan completed at: {{.LastScanTime}}</div>
  </body>
 </html>
 `
