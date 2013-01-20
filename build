@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# This script builds the share library binary for i386/686 processors
+#
 go build -v sks_stats_daemon.go
 strip sks_stats_daemon
 sudo chown sks:sks sks_stats_daemon
