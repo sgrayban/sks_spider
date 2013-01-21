@@ -9,7 +9,7 @@ import "github.com/sgrayban/sks_spider"
 func main() { sks_spider.Main() }
 
 /*
-   Copyright 2009-2012 Phil Pennock
+   Copyright 2009-2013 Phil Pennock
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
