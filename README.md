@@ -84,11 +84,11 @@ library in passing and didn't investigate fully.
 
 After that, the btree import will work and the code should build with:
 
-    go build github.com/syscomet/sks_spider/sks_stats_daemon.go
+    go build github.com/sgrayban/sks_spider/sks_stats_daemon.go
 
 If you encounter problems, look at the `.travis.yml` file which is used
 for running the Travis Continuous Integration tests:
-<https://travis-ci.org/syscomet/sks_spider>.
+<https://travis-ci.org/sgrayban/sks_spider>.
 That assumes some other prep steps run automatically by Travis, but the test
 log should show everything in context.
 
@@ -157,6 +157,15 @@ It's as simple as:
 
 In fact, you don't even need the X-Real-IP pass-through, but set it up now
 and it'll be easier to deal with a future change which logs the origin IP.
+
+Apache configuration
+--------------------
+
+<Location /sks-peers>
+ProxyPass http://127.0.0.1:8001/sks-peers
+SetEnv force-proxy-request-1.0 1
+SetEnv proxy-nokeepalive 1
+</Location>
 
 
 License
