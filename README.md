@@ -57,11 +57,8 @@ To-Do
 Packages
 --------
 
-Scott Grayban provides pre-built binaries for Linux/ELF x86 (i686)
-32-bit-capable userland systems at <https://keyserver.borgnet.us/downloads/>
-(natively built on Debian).
-I am not in a position to vouch for these builds, but am grateful to
-Scott for providing them.
+I provide pre-built binaries for Linux/ELF x86 (i686)
+32-bit-capable userland systems at <https://keyserver.borgnet.us/downloads/> (natively built on Debian).
 
 
 Building
