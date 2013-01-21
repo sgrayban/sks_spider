@@ -4,6 +4,11 @@ sks\_spider contrib
 This directory contains auxilliary tools/scripts/miscellanea not needed
 for sks\_spider itself.
 
+`debian`
+--------
+
+Debian related files.
+
 `update_sks_zone`
 -----------------
 
@@ -48,3 +53,7 @@ pool.  :)  There's more than one type of competition.
 This is an `rc.d` script for FreeBSD, used to run the stats daemon.
 It depends upon `sysutils/daemontools` in Ports, for the `setuidgid` command.
 
+`sks-peers.css`
+---------------
+
+This the default stylesheet for sks_spider
