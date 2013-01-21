@@ -88,7 +88,7 @@ After that, the btree import will work and the code should build with:
 
 If you encounter problems, look at the `.travis.yml` file which is used
 for running the Travis Continuous Integration tests:
-<https://travis-ci.org/sgrayban/sks_spider>.
+	<https://travis-ci.org/sgrayban/sks_spider>.
 That assumes some other prep steps run automatically by Travis, but the test
 log should show everything in context.
 
