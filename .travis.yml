@@ -1,7 +1,7 @@
 language: go
 
 install:
- - SPIDER_DIR="github.com/syscomet/sks_spider"
+ - SPIDER_DIR="github.com/sgrayban/sks_spider"
  - BTREE_DIR="github.com/runningwild/go-btree"
  - GOTGO_DIR="github.com/droundy/gotgo/gotgo"
  - CHECKOUT_TOP="${GOPATH%%:*}/src"
