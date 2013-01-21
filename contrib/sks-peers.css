@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* text/css utf-8
+ *
+ * $Id: sks-peers.css 12 2012-12-30 12:24:36Z sgrayban $
+ *
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Simonetta|Megrim|Fondamento|Inconsolata|Cardo);
+
+/* combined metrics order: top right bottom left */
+
+body {
+  font-family: "Cardo", serif;
+}
+
+tt, code, kbd, samp, xmp, pre, plaintext, .hostname {
+  font-family: "Inconsolata", "Everson Mono", "Droid Sans Mono", monospace;
+}
+
+h1, h2, h3 {
+  font-family: "Simonetta", "Fondamento", "Lucida Handwriting", Muriel, Cursive;
+}
+/* Firefox defaults to: 2em, 1.5em, 1.17em; Tangerine is smaller in the base
+ * area; seems to match my 48px, 32px, 24px first stab but I prefer avoiding
+ * px coercion. */
+h1 { font-size: 3em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+span.ak { text-decoration: underline; }
+div.prelude { margin-bottom: 1.5ex; }
+.blurb > div, .pool > div { margin-bottom: 0.8ex; }
+
+.maintainer { font-style: italic; }
+.keyid { font-family: "Inconsolata", "Everson Mono", "Droid Sans Mono", monospace; font-style: normal; }
+.ipaddr { font-family: "Inconsolata", "Everson Mono", "Droid Sans Mono", monospace; }
+.host_aliases { font-size: smaller; }
+
+.peertable {
+  border-collapse: collapse; 
+  border: 2px solid;
+  padding: 0.8ex 1em 0.5ex 0.5em;
+} 
+.peertable th {
+  border: 2px solid;
+  padding: 0.8ex 1em 0.5ex 0.5em;
+}  
+.peertable tbody td {
+  vertical-align: top;
+  border: 1px solid;
+  padding: 0.8ex 1em 0.5ex 0.5em;
+}
+
+div.meta > span:before { content: " ["; }
+div.meta > span:after { content: "] "; }
+
+div.forms {
+  /* http://www.w3.org/TR/2009/WD-css3-multicol-20090630/ */
+  column-count: 2;
+}
+
+div.forms > h3 {
+  column-break-before: always;
+}
+
+/* http://www.w3.org/TR/CSS21/syndata.html §4.3.8 describes how to use
+ * repeated declarations to support values invalid in older browsers.
+ */
+fieldset {
+  border-style: groove;
+  border-radius: 4em;
+  background-color: rgb(240,240,240);
+  background-color: rgba(20,20,20,0.05);
+}
+
+#pgp_s_text {
+  display: block;
+}
+
+text:focus, textarea:focus {
+  background-color: rgba(0,255,255,0.1);
+}
+
+input.greenish::-webkit-input-placeholder {
+  color: rgb(12, 100, 12);
+}
+
+/* vim: set filetype=css sw=2 expandtab : */
+
