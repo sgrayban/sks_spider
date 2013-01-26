@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>SKS Spider</h1>
-        <p>Tool to spider the PGP SKS keyserver mesh.</p>
+        <p>A tool to spider the PGP SKS keyserver mesh.</p>
 
         <p class="view"><a href="https://github.com/sgrayban/sks_spider">View the Project on GitHub <small>sgrayban/sks_spider</small></a></p>
 
@@ -30,14 +30,17 @@
       <section>
         <h1>sks_spider</h1>
 
-<h1>Tool to spider the PGP SKS keyserver mesh.</h1>
+<h1>A tool to spider the PGP SKS keyserver mesh.</h1>
 
-<hr><p>To see the current test code status use the following URL:<br />
+<hr><p>The image below shows the current build status.<br />
+To see or do a rebuild on the current code just click on the image below:<br />
 <a href="https://travis-ci.org/sgrayban/sks_spider"><img src="https://secure.travis-ci.org/sgrayban/sks_spider.png?branch=master" alt="Build Status"></a></p>
 
 <h2>Overview</h2>
 
-<hr><p>If you don't know what PGP is or anything about the PGP keyservers, then
+<hr>
+
+<p>If you don't know what PGP is or anything about the PGP keyservers, then
 this tool is not for you.  Otherwise, read on.</p>
 
 <p>This is a package which produces one binary, <code>sks_stats_daemon</code>.  This is a
@@ -72,7 +75,9 @@ Those other features should not significantly impact resource consumption.</p>
 
 <h2>To-Do</h2>
 
-<hr><ul>
+<hr>
+
+<ul>
 <li>Preserve more errors for the front-page?</li>
 <li>Look over the admin interfaces, probably want <code>/rescanz</code> back</li>
 <li>If add rescanz, need locking around spider starting; can preserve spider
@@ -81,14 +86,18 @@ a random nonce to authenticate, where the nonce has to be retrieved from
 the logfile.</li>
 </ul><h2>Packages</h2>
 
-<hr><p>I provide pre-built binaries for Linux/ELF x86 (i686) (natively built on Debian) 32-bit-capable systems:</p>
+<hr>
+
+<p>I provide pre-built binaries for Linux/ELF x86 (i686) (natively built on Debian) 32-bit-capable systems:</p>
 
 <ol>
 <li><a href="https://keyserver.borgnet.us/downloads/">https://keyserver.borgnet.us/downloads/</a></li>
 <li><a href="https://bitbucket.org/sgrayban/sks_spider/downloads">https://bitbucket.org/sgrayban/sks_spider/downloads</a></li>
 </ol><h2>Building</h2>
 
-<hr><p>For the most part, <code>go get</code> should just work.</p>
+<hr>
+
+<p>For the most part, <code>go get</code> should just work.</p>
 
 <p>The exception is the btree support from <a href="https://github.com/runningwild/go-btree">https://github.com/runningwild/go-btree</a>
 which is very nice, and written using generics, with the <code>gotgo</code>
@@ -120,7 +129,9 @@ log should show everything in context.</p>
 
 <h2>Running</h2>
 
-<hr><p>You can see the accepted parameters with the <code>-help</code> flag:</p>
+<hr>
+
+<p>You can see the accepted parameters with the <code>-help</code> flag:</p>
 
 <pre><code>sks_stats_daemon -help
 </code></pre>
@@ -172,7 +183,8 @@ and exits.</p>
 
 <h2>nginx configuration</h2>
 
-<hr><p>It's as simple as:</p>
+<hr>
+<p>It's as simple as:</p>
 
 <pre><code>location /sks-peers {
     proxy_pass          http://127.0.0.1:8001;
@@ -185,16 +197,22 @@ and it'll be easier to deal with a future change which logs the origin IP.</p>
 
 <h2>Apache configuration</h2>
 
-<hr><pre><code>&lt;Location /sks-peers&gt;
-ProxyPass http://127.0.0.1:8001/sks-peers
-SetEnv force-proxy-request-1.0 1
-SetEnv proxy-nokeepalive 1
+<hr>
+<pre>
+<code>
+&lt;Location /sks-peers&gt;
+    ProxyPass http://127.0.0.1:8001/sks-peers
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
 &lt;/Location&gt;
-</code></pre>
+</code>
+</pre>
 
 <h2>License</h2>
 
-<hr><p>Apache 2.0.</p>
+<hr>
+
+<p>Apache 2.0.</p>
 
 <p>Most people are nice and sane and in a world without subversion and lawyers,
 this next bit wouldn't be necessary.  It's butt-covering, that's all.</p>
@@ -208,7 +226,9 @@ be distributed under the same license, as part of a larger work</li>
 <li>You are assumed to have the authority to submit the modification
 under these terms and are implicitly testifying to this by making the
 submission.</li>
-</ul><p>In other words: please don't be a jackass, contributions are expected to
+</ul>
+
+<p>In other words: please don't be a jackass, contributions are expected to
 contribute towards the codebase, not take away.  Thanks.</p>
 
 <p>That's about it.<br>
@@ -216,6 +236,7 @@ contribute towards the codebase, not take away.  Thanks.</p>
 <br />
 -Scott</p>
       </section>
+
       <footer>
         <p>This project is maintained by <a href="https://github.com/sgrayban">sgrayban</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
