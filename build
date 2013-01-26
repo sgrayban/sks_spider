@@ -19,6 +19,9 @@
 # and strips the symbols out of the file to reduce its size.
 #
 go build -v sks_stats_daemon.go
+go test -i
+go vet
+go test -v
 strip sks_stats_daemon
 sudo chown sks:sks sks_stats_daemon
 sudo mv sks_stats_daemon /home/sks/bin/
