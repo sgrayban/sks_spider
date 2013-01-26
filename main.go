@@ -51,6 +51,7 @@ var (
 	flJsonLoad           = flag.String("json-load", "", "File to load JSON hosts from instead of spidering")
 	flJsonPersistPath    = flag.String("json-persist", "", "File to load at startup if exists, and write to at SIGUSR1")
 	flStartedFlagfile    = flag.String("started-file", "", "Create this file after started and running")
+	flHttpFetchTimeout   = flag.Duration("http-fetch-timeout", 2*time.Minute, "Timeout for HTTP fetch from SKS servers")
 )
 
 var serverHeadersNative = map[string]bool{
@@ -93,18 +94,18 @@ type PersistedHostInfo struct {
 
 var (
 	currentHostInfo    *PersistedHostInfo
-	currentHostMapLock sync.Mutex
+	currentHostMapLock sync.RWMutex
 )
 
 func GetCurrentPersisted() *PersistedHostInfo {
-	currentHostMapLock.Lock()
-	defer currentHostMapLock.Unlock()
+	currentHostMapLock.RLock()
+	defer currentHostMapLock.RUnlock()
 	return currentHostInfo
 }
 
 func GetCurrentHosts() HostMap {
-	currentHostMapLock.Lock()
-	defer currentHostMapLock.Unlock()
+	currentHostMapLock.RLock()
+	defer currentHostMapLock.RUnlock()
 	if currentHostInfo == nil {
 		return nil
 	}
@@ -112,8 +113,8 @@ func GetCurrentHosts() HostMap {
 }
 
 func GetCurrentHostlist() []string {
-	currentHostMapLock.Lock()
-	defer currentHostMapLock.Unlock()
+	currentHostMapLock.RLock()
+	defer currentHostMapLock.RUnlock()
 	if currentHostInfo == nil {
 		return nil
 	}
@@ -132,6 +133,7 @@ func normaliseMeshAndSet(spider *Spider, dumpJson bool) {
 	go func(s *Spider) {
 		persisted := GeneratePersistedInformation(s)
 		SetCurrentPersisted(persisted)
+		persisted.UpdateStatsCounters(spider)
 		runtime.GC()
 		if dumpJson && *flJsonDump != "" {
 			Log.Printf("Saving JSON to \"%s\"", *flJsonDump)
