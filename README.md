@@ -1,4 +1,4 @@
-sks\_spider
+sks_spider
 ===========
 
 Tool to spider the PGP SKS keyserver mesh.
@@ -57,9 +57,10 @@ To-Do
 Packages
 --------
 
-I provide pre-built binaries for Linux/ELF x86 (i686)
-32-bit-capable userland systems at <https://keyserver.borgnet.us/downloads/> (natively built on Debian).
+I provide pre-built binaries for Linux/ELF x86 (i686) (natively built on Debian) 32-bit-capable systems:
 
+   # https://keyserver.borgnet.us/downloads/
+   # https://bitbucket.org/sgrayban/sks_spider/downloads
 
 Building
 --------
@@ -161,11 +162,11 @@ and it'll be easier to deal with a future change which logs the origin IP.
 Apache configuration
 --------------------
 
-<Location /sks-peers>
-ProxyPass http://127.0.0.1:8001/sks-peers
-SetEnv force-proxy-request-1.0 1
-SetEnv proxy-nokeepalive 1
-</Location>
+    <Location /sks-peers>
+        ProxyPass http://127.0.0.1:8001/sks-peers
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+    </Location>
 
 
 License
@@ -189,4 +190,5 @@ contribute towards the codebase, not take away.  Thanks.
 
 That's about it.  
 -Phil
+
 -Scott
