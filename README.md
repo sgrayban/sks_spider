@@ -59,8 +59,8 @@ Packages
 
 I provide pre-built binaries for Linux/ELF x86 (i686) (natively built on Debian) 32-bit-capable systems:
 
-   https://keyserver.borgnet.us/downloads/
-   https://bitbucket.org/sgrayban/sks_spider/downloads
+    https://keyserver.borgnet.us/downloads/
+    https://bitbucket.org/sgrayban/sks_spider/downloads
 
 Building
 --------
