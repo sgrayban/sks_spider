@@ -81,10 +81,12 @@ a random nonce to authenticate, where the nonce has to be retrieved from
 the logfile.</li>
 </ul><h2>Packages</h2>
 
-<hr><p>I provide pre-built binaries for Linux/ELF x86 (i686)
-32-bit-capable userland systems at <a href="https://keyserver.borgnet.us/downloads/">https://keyserver.borgnet.us/downloads/</a> (natively built on Debian).</p>
+<hr><p>I provide pre-built binaries for Linux/ELF x86 (i686) (natively built on Debian) 32-bit-capable systems:</p>
 
-<h2>Building</h2>
+<ol>
+<li><a href="https://keyserver.borgnet.us/downloads/">https://keyserver.borgnet.us/downloads/</a></li>
+<li><a href="https://bitbucket.org/sgrayban/sks_spider/downloads">https://bitbucket.org/sgrayban/sks_spider/downloads</a></li>
+</ol><h2>Building</h2>
 
 <hr><p>For the most part, <code>go get</code> should just work.</p>
 
@@ -133,7 +135,7 @@ it where a supervising agent tool can easily watch it.  If you want it to
 detach, then your OS should have available a wrapper command which will handle
 that for you.</p>
 
-<p>The log-file will need to be exist and be writeable by that unprivileged
+<p>The log-file will need to be exist and be writable by that unprivileged
 user (or be in a directory which that user can create new files in).</p>
 
 <p>Note that the logging does not currently log all HTTP requests; that's the
@@ -183,11 +185,12 @@ and it'll be easier to deal with a future change which logs the origin IP.</p>
 
 <h2>Apache configuration</h2>
 
-<hr><p>
-ProxyPass <a href="http://127.0.0.1:8001/sks-peers">http://127.0.0.1:8001/sks-peers</a>
+<hr><pre><code>&lt;Location /sks-peers&gt;
+ProxyPass http://127.0.0.1:8001/sks-peers
 SetEnv force-proxy-request-1.0 1
 SetEnv proxy-nokeepalive 1
-</p>
+&lt;/Location&gt;
+</code></pre>
 
 <h2>License</h2>
 
